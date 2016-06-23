@@ -11,6 +11,14 @@ var getErrorMessage = function(err) {
 	}
 };
 
+exports.renderTodos = function(req, res) {
+    res.render('index', {
+    	title: 'MEAN MVC todos',
+		pageType: 'todos',
+    	user: JSON.stringify(req.user)
+    });
+};
+
 exports.create = function(req, res) {
 	var todo = new Todo(req.body);
 	todo.creator = req.user;

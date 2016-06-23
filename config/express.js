@@ -8,6 +8,8 @@ var config = require('./config'),
 module.exports = function() {
 	var app = express();
 
+	app.use(express.static('./public'));
+
 	app.use(bodyParser.urlencoded({
 		extended: true
 	}));
@@ -27,11 +29,9 @@ module.exports = function() {
 	app.use(passport.initialize());
 	app.use(passport.session());
 
-	require('../app/routes/index.server.routes.js')(app);
 	require('../app/routes/users.server.routes.js')(app);
 	require('../app/routes/todos.server.routes.js')(app);
-
-	app.use(express.static('./public'));
+	require('../app/routes/index.server.routes.js')(app);
 
 	return app;
 };

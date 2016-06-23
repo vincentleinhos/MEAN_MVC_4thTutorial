@@ -27,10 +27,10 @@
                     </li>
                     
                     <li class="page-scroll" data-ng-show="authentication.user">
-                        <a href="/#!/todos/create">CREATE</a>
+                        <a href="/todos/create">CREATE</a>
                     </li>
                     <li class="page-scroll" data-ng-show="authentication.user">
-                        <a href="/#!/todos">TODOs</a>
+                        <a href="/todos">TODOs</a>
                     </li>
                     <li class="page-scroll" data-ng-show="authentication.user">
                         <a href="/logout">Hello <span data-ng-bind="authentication.user.name" data-ng-show="authentication.user"></span>, Logout?</a>
@@ -45,7 +45,7 @@
 	<section data-ng-init="findOne()" class="container">
 		<h1 data-ng-bind="todo.title" ng-class="todo.completed?'completed':''"></h1>
 		<div data-ng-show="authentication.user._id == todo.creator._id">
-			<a href="/#!/todos/{{todo._id}}/edit">edit</a>
+			<a href="/todos/{{todo._id}}/edit">edit</a>
 			<a href="#" data-ng-click="delete();">delete</a>
 		</div>
 		<small>

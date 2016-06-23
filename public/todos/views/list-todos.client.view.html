@@ -27,7 +27,7 @@
                     </li>
                     
                     <li class="page-scroll" data-ng-show="authentication.user">
-                        <a href="/#!/todos/create">CREATE</a>
+                        <a href="/todos/create">CREATE</a>
                     </li>
                     <li class="page-scroll" data-ng-show="authentication.user">
                         <a href="/logout">Hello <span data-ng-bind="authentication.user.name" data-ng-show="authentication.user"></span>, Logout?</a>
@@ -45,7 +45,7 @@
             Show completed: <input type="checkbox" ng-model="showcompleted" ng-init="showcompleted=true">
 			<ul>
 				<li data-ng-repeat="todo in todos" ng-if="showcompleted && todo.completed || !todo.completed">
-					<a data-ng-href="#!/todos/{{todo._id}}" data-ng-bind="todo.title" ng-class="todo.completed?'completed':''"></a>
+					<a data-ng-href="/todos/{{todo._id}}" data-ng-bind="todo.title" ng-class="todo.completed?'completed':''"></a>
 					(<small data-ng-bind="todo.created | date:'short'"></small>)
 					<br>					
 					
@@ -53,7 +53,7 @@
 				</li>
 			</ul>
 			<div data-ng-hide="!todos || todos.length">
-				No todos yet, why don't you <a href="/#!/todos/create">create one</a>?
+				No todos yet, why don't you <a href="/todos/create">create one</a>?
 			</div>
 		</div>
 	</section>
